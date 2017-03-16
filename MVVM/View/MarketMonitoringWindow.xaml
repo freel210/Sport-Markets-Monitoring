@@ -1,0 +1,58 @@
+﻿<Window x:Class="View.MarketMonitoringWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:local="clr-namespace:View.UserControls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Market Monitoring Window"
+        ResizeMode="NoResize" Height="660" Width="555">
+
+    <StackPanel>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15 5 15 0">
+                <local:PriceHistory_BC Margin="0 0 2 0"
+                    CurrentMarket=  "{Binding Market, Mode=OneWay}"
+                    CurrentMarketMemberChange="{Binding CurrentMarketMemberChange, Mode=OneWay}"
+                    CurrentRecord="{Binding CurrentRecord, Mode=OneWayToSource}"
+                    />
+
+                <local:MarketDetails_BC 
+				    CurrentMarket=  "{Binding Market, Mode=OneWay}"
+                    TimeLeft=       "{Binding TimeLeft, Mode=OneWay}"/>
+
+            </StackPanel>
+
+            <local:Prices_BC Margin="15 15 15 0"
+                    CurrentMarket = "{Binding Market, Mode=OneWay}"
+                    CurrentMarketMemberChange="{Binding CurrentMarketMemberChange, Mode=OneWay}"
+                    CurrentRecord="{Binding CurrentRecord, Mode=OneWay}"
+                    />
+
+            <StackPanel Orientation="Horizontal" Margin="15 15 15 0">
+                <StackPanel>
+
+                    <local:Cases_BC Margin="2 2 2 0"
+                            CurrentMarket=  "{Binding Market, Mode=OneWay}"
+                            CurrentMarketMemberChange="{Binding CurrentMarketMemberChange, Mode=OneWay}"
+                            CurrentCase="{Binding CurrentCase, Mode=TwoWay}"
+                            CurrentRecord="{Binding CurrentRecord, Mode=OneWay}"
+                            />
+
+                    <local:CasesHor_BC Margin="2 2 2 0"
+                            CurrentMarket=  "{Binding Market, Mode=OneWay}"
+                            CurrentMarketMemberChange="{Binding CurrentMarketMemberChange, Mode=OneWay}"
+                            CurrentCase="{Binding CurrentCase, Mode=TwoWay}"
+                            CurrentRecord="{Binding CurrentRecord, Mode=OneWay}"
+                            />
+
+                </StackPanel>
+
+                <local:Analysedaten_BC Margin="18 2 2 0"
+                        CurrentMarket = "{Binding Market, Mode=OneWay}"
+                        CurrentMarketMemberChange="{Binding CurrentMarketMemberChange, Mode=OneWay}"
+                        CurrentCase   = "{Binding CurrentCase,   Mode=OneWay}"
+                        CurrentRecord="{Binding CurrentRecord, Mode=OneWay}"
+                        />
+
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

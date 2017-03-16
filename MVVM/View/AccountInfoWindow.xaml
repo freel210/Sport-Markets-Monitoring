@@ -1,0 +1,15 @@
+﻿<Window x:Class="View.AccountInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:View.UserControls"
+        Title="AccountInfoWindow" Height="400" Width="316" ResizeMode="NoResize" >
+    <StackPanel >
+        <TextBlock Margin="15 5 0 0" Text="Account Details" FontSize="12" FontWeight="Bold"/>
+        <local:AccountDetails_BC Margin="15 0 0 0"
+                        GetAccountDetails="{Binding GetAccountDetails, Mode=OneWay}" />
+
+        <TextBlock Margin="15 15 0 0" Text="Account Funds" FontSize="12" FontWeight="Bold"/>
+        <local:AccountFunds_BC Margin="15 0 0 0"
+                        GetAccountFunds="{Binding GetAccountFunds, Mode=OneWay}"/>
+    </StackPanel>
+</Window>
